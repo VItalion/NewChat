@@ -10,42 +10,47 @@ namespace TestLibrary
     {
         static void Main(string[] args)
         {
-            int command = 1;
+            string command = String.Empty;
 
-            while (command != 0)
+            while (true)
             {
-                Console.Clear();
-                Console.Write("Input commdand:\t");
-                command = int.Parse(Console.ReadLine());
+                //Console.Clear();
+                Console.Write("DataBase>");
+                command = Console.ReadLine().ToLower();
 
                 switch (command)
                 {
-                    case 1:
-                        {
-                            Console.Write("Login:\t");
-                            string login = Console.ReadLine();
-
-                            Console.Write("Password:\t");
-                            string password = Console.ReadLine();
-
-                            DataBaseLibrary.Data.CreateUser(login, password);
-
-                            Console.WriteLine("User Created....");
-                            Console.ReadKey();
-
-                            break;
-                        }
-                    case 2:
-                        {
-                            foreach (string user in DataBaseLibrary.Data.PrintAllUser())
-                                Console.WriteLine($"**********\n{user}\n*********\n\n");
-
-                            Console.ReadKey();
-
-                            break;
-                        }
+                    case "create": Create(); break;
+                    case "add": Create(); break;
+                    case "print": Print(); break;
+                    case "delete": Delete(); break;
+                    case "remove": Delete(); break;
+                    case "exit": return;
                 }
             }
+        }
+
+        static void Create()
+        {
+            Console.Write("Login:\t");
+            string login = Console.ReadLine();
+
+            Console.Write("Password:\t");
+            string password = Console.ReadLine();
+
+            DataBaseLibrary.Data.CreateUser(login, password);
+        }
+        static void Delete()
+        {
+            Console.Write("Login:\t");
+            string login = Console.ReadLine();
+
+            DataBaseLibrary.Data.DeleteUser(login);
+        }
+        static void Print()
+        {
+            foreach (string user in DataBaseLibrary.Data.UserToStringArray())
+                Console.WriteLine($"**********\n{user}\n*********\n");
         }
     }
 }
