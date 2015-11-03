@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseLibrary", "DataBase
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLibrary", "TestLibrary\TestLibrary.csproj", "{AD3C9A9B-D016-4130-AF6C-5B737978D2DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatServiceLibrary", "ChatServiceLibrary\ChatServiceLibrary.csproj", "{7044D37C-8D62-49FE-9EE0-17824C28733F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AD3C9A9B-D016-4130-AF6C-5B737978D2DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD3C9A9B-D016-4130-AF6C-5B737978D2DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD3C9A9B-D016-4130-AF6C-5B737978D2DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7044D37C-8D62-49FE-9EE0-17824C28733F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7044D37C-8D62-49FE-9EE0-17824C28733F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7044D37C-8D62-49FE-9EE0-17824C28733F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7044D37C-8D62-49FE-9EE0-17824C28733F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
