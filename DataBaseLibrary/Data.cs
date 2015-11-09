@@ -8,6 +8,47 @@ namespace DataBaseLibrary
 {
     public class Data
     {
+        /// <summary>
+        /// Проверка на существование пользователя
+        /// </summary>
+        /// <param name="login">Логин пользователя</param>
+        /// <param name="password">пароль пользователя</param>
+        /// <returns></returns>
+        public static bool Exist(string login, string password)
+        {
+            using (DataContext context = new DataContext())
+            {
+                var users = from user in context.Users
+                            where (user.Login == login) && (user.Password == password)
+                            select user;
+
+                foreach (var user in users)
+                    return true;
+
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Проверка на существование комнаты
+        /// </summary>
+        /// <param name="roomName">Имя комнаты</param>
+        /// <returns></returns>
+        public static bool Exist(string roomName)
+        {
+            using (DataContext context = new DataContext())
+            {
+                var rooms = from room in context.Rooms
+                            where room.Name == roomName
+                            select room;
+
+                foreach (var room in rooms)
+                    return true;
+
+                return false;
+            }
+        }
+
         public static void CreateUser(string login, string password)
         {
             using (DataContext context = new DataContext())
@@ -28,6 +69,28 @@ namespace DataBaseLibrary
                     context.SaveChanges();
                 }
 
+            }
+        }
+
+        /// <summary>
+        /// Получить список пользователей в комнате
+        /// </summary>
+        /// <param name="roomName">Имя комнаты</param>
+        /// <returns>Список пользователей</returns>
+        public static List<string> GetUsersInRoom(string roomName)
+        {
+            using (DataContext context = new DataContext())
+            {
+                var room = (from r in context.Rooms
+                            where r.Name == roomName
+                            select r).First();
+
+                List<string> result = new List<string>();
+                foreach(var user in room.Users)
+                {
+                    result.Add(user.Login);
+                }
+                return result;
             }
         }
 
@@ -68,6 +131,40 @@ namespace DataBaseLibrary
                     context.SaveChanges();
                 }
 
+            }
+        }
+
+        public static void InsideRoom(string roomName, string roomPwd, string login)
+        {
+            using (DataContext context = new DataContext())
+            {
+                Room room = (from r in context.Rooms
+                              where (r.Name == roomName) && (r.Password == roomPwd)
+                              select r).First();
+
+                User user = (from u in context.Users
+                             where (u.Login == login)
+                             select u).First();
+
+                room.Users.Add(user);
+
+                context.SaveChanges();
+            }
+        }
+
+        public static void LeaveRoom(string roomName, string login)
+        {
+            using (DataContext context = new DataContext())
+            {
+                Room room = (from r in context.Rooms
+                             where r.Name == roomName
+                             select r).First();
+
+                User user = (from u in context.Users
+                             where u.Login == login
+                             select u).First();
+
+                room.Users.Remove(user);
             }
         }
 

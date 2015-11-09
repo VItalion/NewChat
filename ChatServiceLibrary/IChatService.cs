@@ -21,7 +21,7 @@ namespace ChatServiceLibrary
         void SendMessage(string sender, string recipient, string message);
 
         [OperationContract]
-        void LogOut(string login);
+        void LogOut(string login, string password);
 
         [OperationContract]
         bool CreateRoom(string name, string password);

@@ -10,6 +10,6 @@ namespace ChatServiceLibrary
     interface IChatServiceCallback
     {
         [OperationContract(IsOneWay = true)]
-        void NewMessage();
+        void NewMessage(string sender, string message);
     }
 }
