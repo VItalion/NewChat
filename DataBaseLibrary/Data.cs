@@ -195,7 +195,7 @@ namespace DataBaseLibrary
 
                 foreach(var user in users)
                 {
-                    string temp = $"Login:\t{user.Login}\nPassword:\t{user.Password}";
+                    string temp = $"Login:    {user.Login}\nPassword: {user.Password}";
                     result.Add(temp);
                 }
 
@@ -213,7 +213,7 @@ namespace DataBaseLibrary
 
                 foreach (var room in rooms)
                 {
-                    string temp = $"Login:\t{room.Name}\nPassword:\t{room.Password}";
+                    string temp = $"Name:     {room.Name}\nPassword: {room.Password}";
                     result.Add(temp);
                 }
 
