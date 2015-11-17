@@ -138,7 +138,7 @@ namespace TestLibrary
             Console.WriteLine("delete user/room - Удалить пользователя/комнату\nkey: login/name - логин пользователя/имя комнаты\n");
             Console.WriteLine("drop user/room - Удалить пользователя/комнату\nkey: login/name - логин пользователя/имя комнаты\n");
             Console.WriteLine("remove user/room - Удалить пользователя/комнату\nkey: login/name - логин пользователя/имя комнаты\n");
-            Console.WriteLine("print user/room - Вывести на экран пользователей/комнаты\n");
+            Console.WriteLine("print users/rooms - Вывести на экран пользователей/комнаты\n");
             Console.WriteLine("exit - Выход из консоли\n");
         }
     }

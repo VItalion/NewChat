@@ -62,6 +62,7 @@ namespace ChatServiceLibrary
             }
             catch(Exception ex)
             {
+                System.IO.File.AppendAllText("S:/Logs/LogChat.txt", $"\n{ex.Message}\n");
                 return false;
             }
         }
@@ -104,7 +105,7 @@ namespace ChatServiceLibrary
             }
             catch(Exception ex)
             {
-
+                System.IO.File.AppendAllText("S:/Logs/LogChat.txt", $"\nSending error:\n{ex.Message}\n");
             }
         }
 

@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLibrary", "TestLibrary\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatServiceLibrary", "ChatServiceLibrary\ChatServiceLibrary.csproj", "{7044D37C-8D62-49FE-9EE0-17824C28733F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfConsole", "C:\Users\witalxp\Documents\GitHubVisualStudio\Chat\Chat\WpfConsole\WpfConsole.csproj", "{46606298-3CA9-4A70-93F3-2E394FBAFCDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientWPF", "ClientWPF\ClientWPF.csproj", "{017348BF-F1FB-40ED-B865-960DF327118A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientWPF", "C:\Users\witalxp\Documents\GitHubVisualStudio\Chat\Chat\ClientWPF\ClientWPF.csproj", "{017348BF-F1FB-40ED-B865-960DF327118A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfConsole", "WpfConsole\WpfConsole.csproj", "{46606298-3CA9-4A70-93F3-2E394FBAFCDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{7044D37C-8D62-49FE-9EE0-17824C28733F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7044D37C-8D62-49FE-9EE0-17824C28733F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7044D37C-8D62-49FE-9EE0-17824C28733F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{46606298-3CA9-4A70-93F3-2E394FBAFCDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46606298-3CA9-4A70-93F3-2E394FBAFCDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46606298-3CA9-4A70-93F3-2E394FBAFCDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46606298-3CA9-4A70-93F3-2E394FBAFCDF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{017348BF-F1FB-40ED-B865-960DF327118A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{017348BF-F1FB-40ED-B865-960DF327118A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{017348BF-F1FB-40ED-B865-960DF327118A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{017348BF-F1FB-40ED-B865-960DF327118A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46606298-3CA9-4A70-93F3-2E394FBAFCDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46606298-3CA9-4A70-93F3-2E394FBAFCDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46606298-3CA9-4A70-93F3-2E394FBAFCDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46606298-3CA9-4A70-93F3-2E394FBAFCDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

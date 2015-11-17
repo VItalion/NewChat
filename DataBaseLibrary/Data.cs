@@ -83,12 +83,15 @@ namespace DataBaseLibrary
             {
                 var room = (from r in context.Rooms
                             where r.Name == roomName
-                            select r).First();
+                            select r).Single();
+
+                System.IO.File.AppendAllText("S:/Log.txt", "ping\t" + room.Name + room.Users.Count.ToString() + '\n');
 
                 List<string> result = new List<string>();
                 foreach(var user in room.Users)
                 {
                     result.Add(user.Login);
+                    System.IO.File.AppendAllText("S:/Log.txt", user.Login+'\n');
                 }
                 return result;
             }
@@ -139,14 +142,20 @@ namespace DataBaseLibrary
             using (DataContext context = new DataContext())
             {
                 Room room = (from r in context.Rooms
-                              where (r.Name == roomName) && (r.Password == roomPwd)
-                              select r).First();
+                             where (r.Name == roomName) && (r.Password == roomPwd)
+                             select r).Single();
 
                 User user = (from u in context.Users
                              where (u.Login == login)
-                             select u).First();
-
-                room.Users.Add(user);
+                             select u).Single();
+                                
+                if(room.Users!=null)
+                    room.Users.Add(user);
+                else
+                {
+                    room.Users = new List<User>();
+                    room.Users.Add(user);
+                }
 
                 context.SaveChanges();
             }
